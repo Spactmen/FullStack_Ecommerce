@@ -24,7 +24,6 @@ import { Separator } from "@/components/ui/separator"
 import { Heading } from "@/components/ui/heading"
 import { AlertModal } from "@/components/modals/alert-modal"
 import ImageUpload from "@/components/ui/image-upload"
-// import ImageUpload from "@/components/ui/image-upload"
 
 const formSchema = z.object({
   label: z.string().min(1),
@@ -71,6 +70,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
       router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage);
     } catch (error: any) {
+      console.log(error);
       toast.error('Something went wrong.');
     } finally {
       setLoading(false);
